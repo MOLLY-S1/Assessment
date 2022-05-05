@@ -7,11 +7,11 @@ prints the user input for ease of trialling
 show_instructions = input("Have you done this quiz before?: ").lower()
 
 # If they say yes launch the game
-if show_instructions == "yes" or "y":
+if show_instructions == "yes" or show_instructions == "y":
     print("launch quiz")
 
 # If they say no show instructions
-elif show_instructions == "no" or "n":
+elif show_instructions == "no" or show_instructions == "n":
     print("Show instructions")
 
 # If anything else is entered show error message

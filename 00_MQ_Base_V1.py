@@ -1,5 +1,5 @@
-""" Function taken from 02V1 as the basis for this function
-It incorperates both the yes no function and the ability to show instructions
+""" Base Component
+Functions added when they have been tested and completed
 """
 
 
@@ -39,7 +39,6 @@ def instructions():
 played_before = yes_no("have you done this quiz before? :")
 if played_before == "No":
     instructions()
-
 else:
     print("program continues")
 
