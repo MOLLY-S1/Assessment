@@ -3,18 +3,24 @@ then check the answer
 """
 import random
 
-# list of numbers to quiz on
-num_list = [['tahi','1'],['rua','2'],['tora','3'],
-            ['whā','4'],['rima','5'],["ono","6"],
-            ['whitu','7'],['waru','8'],['iwa','9'],
-            ["tekau","10"]]
+# list of numbers
+num_list = [['Tahi',1],['Rua',2],['Tora',3],
+            ['Whā',4],['Rima',5],["Ono",6],
+            ['Whitu',7],['Waru',8],['Iwa',9],
+            ["Tekau",10]]
 
-test = num_list
-random.shuffle(test)
+choice = input("Please press <enter> to begin")
+while choice == "":
+    if choice == "":
+        choice = num_list
 
-for i in test:
-    answer = int(input(f"please enter the english word for {test}".format(i[0])))
-    if answer == 1[i]:
-        print("correct")
-    else:
+    random.shuffle(choice)
+
+    for i in choice:
+        answer = int(input("please enter the english word for {}: ".format(i[0])))
+        if answer == i[1]:
+            print("correct")
+        else:
+            print('incorrect')
+
 
