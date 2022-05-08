@@ -1,5 +1,5 @@
 """ Question generator V3 based on V2
-Using a varible to track the score and feedback is given
+Now shows the score at the end of every question for ease of testing
 """
 import random
 
@@ -14,9 +14,8 @@ score = 0
 
 # Enter to Begin
 choice = input("Please press <enter> to begin")
-while choice == "":
-    if choice == "":
-        choice = num_list
+while choice != "x":
+    choice = num_list
 
 
 # Shuffle the list
@@ -29,11 +28,15 @@ while choice == "":
             print("Correct")
             print()
             score += 1
+            print(f"Your score is {score}")
+            print()
 
         # If incorrect give feedback
         else:
             print('Incorrect')
             print(f"The answer was {i[1]}")
+            print()
+            print(f"Your score is {score}")
             print()
 
 print(f"Your score was{score} out of 10")
