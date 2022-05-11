@@ -4,6 +4,7 @@ Functions added when they have been tested and completed
 
 import random
 
+
 # Yes/No checking function
 def yes_no(question_text):
     while True:
@@ -87,7 +88,6 @@ def generate_question():
 played_before = yes_no("have you done this quiz before? :")
 if played_before == "No":
     instructions()
-    print(generate_question())
-else:
-    print(generate_question())
+
+print(generate_question())
 
