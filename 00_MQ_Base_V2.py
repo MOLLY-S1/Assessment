@@ -32,9 +32,11 @@ def yes_no(question_text):
 def instructions():
     print("*** How To Play ***")
     print()
-    print("The Rules of the Quiz Will Go Here")
-    print()
-    print("Program Continues")
+    print("There will be 10 questions to test you knowledge of Māori numbers\n"
+          "Each question can be answered as a integer or a word for that number\n"
+          "At the end of the 10 questions you will be given your score out of ten\n"
+          "You can then press <enter> to play again or 'x' to quit\n"
+          "Have fun and good luck! ")
     print()
 
 
@@ -83,7 +85,12 @@ def generate_question():
                 print()
             question += 1
     # show the score
-    return f"Your score was {score} out of 10 questions"
+    return formatter("/",f"Your score was {score} out of 10 questions")
+    play_again = input("\nDo you want to play again?\n"
+                   "Press 'x' to quit or <enter> to play again\n")
+
+    while play_again != 'x':
+        return (generate_question())
 
 
 # Function to format statements
@@ -103,6 +110,12 @@ if played_before == "No":
     instructions()
 
 print(generate_question())
+
+play_again = input("\nDo you want to play again?\n"
+                   "Press 'x' to quit or <enter> to play again\n")
+
+while play_again != 'x':
+    print(generate_question())
 
 print("Thanks for playing")
 print(formatter("=","Goodbye"))
