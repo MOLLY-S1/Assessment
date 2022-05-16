@@ -12,7 +12,7 @@ def formatter(symbol, text):
 
 
 # Main Routine
-print(formatter("-", "Welcome to the Maori Quiz"))
+print(formatter("-", "Welcome to the Māori Quiz"))
 print()
 print(formatter("!", "CORRECT"))
 print()
