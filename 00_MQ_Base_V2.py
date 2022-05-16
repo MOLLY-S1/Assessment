@@ -66,7 +66,8 @@ def generate_question():
         # Ask question
         for i in choice:
             print()
-            print(f"Question {question}")
+            print(formatter(".",f"Question {question}"))
+            print()
             answer = input("Please enter the english word for {}: ".format(i[0])).lower()
             # If it is right show correct and add one to the score
             if answer == i[1] or answer == i[2]:
@@ -82,7 +83,7 @@ def generate_question():
                 print()
             question += 1
     # show the score
-    return f"Your score was {score} out of ten"
+    return f"Your score was {score} out of 10 questions"
 
 
 # Function to format statements
@@ -102,4 +103,8 @@ if played_before == "No":
     instructions()
 
 print(generate_question())
+
+print("Thanks for playing")
+print(formatter("=","Goodbye"))
+
 
