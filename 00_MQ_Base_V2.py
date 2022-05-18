@@ -54,44 +54,60 @@ def generate_question():
     # Question tracker
     question = 1
 
-    # Enter to Begin
-    choice = input("Please press <enter> to begin")
-    while choice != "":
-        choice = input("Please press <enter> to begin")
-        print()
-    while choice == "":
-        if choice == "":
-            choice = num_list
-
-        # Shuffle the list
-        random.shuffle(choice)
-        # Ask question
-        for i in choice:
-            print()
-            print(formatter(".",f"Question {question}"))
-            print()
-            answer = input("Please enter the english word for {}: ".format(i[0])).lower()
-            # If it is right show correct and add one to the score
-            if answer == i[1] or answer == i[2]:
-                print(formatter("!","Correct"))
-                print()
-                score += 1
-
-
-            # If incorrect give feedback
-            else:
-                print(formatter("*",'Incorrect'))
-                print(f"The answer was {i[1]}")
-                print()
-            question += 1
-    # show the score
-    return formatter("/",f"Your score was {score} out of 10 questions")
-    play_again = input("\nDo you want to play again?\n"
-                   "Press 'x' to quit or <enter> to play again\n")
+    # Rounds
+    play_again = ""
 
     while play_again != 'x':
-        return (generate_question())
 
+        # Enter to Begin
+        choice = input("Please press <enter> to begin")
+        while choice != "":
+            choice = input("Please press <enter> to begin")
+            print()
+        while choice == "":
+            if choice == "":
+                choice = num_list
+
+            # Shuffle the list
+            random.shuffle(choice)
+            # Ask question
+            for i in choice:
+                print()
+                print(formatter(".",f"Question {question}"))
+                print()
+                answer = input("Please enter the english word for {}: ".format(i[0])).lower()
+                # If it is right show correct and add one to the score
+                if answer == i[1] or answer == i[2]:
+                    print(formatter("!","Correct"))
+                    print()
+                    score += 1
+
+
+                # If incorrect give feedback
+                else:
+                    print(formatter("*",'Incorrect'))
+                    print(f"The answer was {i[1]}")
+                    print()
+                question += 1
+        # show the score
+        return formatter("/",f"Your score was {score} out of 10 questions")
+
+    # Code to play again
+    play_again =  input("\n Do you want to play again?\n "
+                        "<enter> to play again or 'X' to exit").lower()
+
+
+
+
+
+def rounds():
+    play_again = ""
+
+    while play_again != 'x':
+        print("program continues as expected")
+
+        play_again =  input("\n Do you want to play again?\n "
+                            "<enter> to play again or 'X' to exit").lower()
 
 # Function to format statements
 def formatter(symbol, text):
@@ -110,14 +126,5 @@ if played_before == "No":
     instructions()
 
 print(generate_question())
-
-play_again = input("\nDo you want to play again?\n"
-                   "Press 'x' to quit or <enter> to play again\n")
-
-while play_again != 'x':
-    print(generate_question())
-
-print("Thanks for playing")
-print(formatter("=","Goodbye"))
 
 
