@@ -21,37 +21,40 @@ def generate_question():
     while play_again != 'x':
 
         # Enter to Begin
-        while True:
-            choice = input("Please press <enter> to begin")
-            print()
-            while choice == "":
-                if choice == "":
-                    choice = num_list
 
-                # Shuffle the list
-                random.shuffle(choice)
-                # Ask question
-                for i in choice:
+        choice = input("Please press <enter> to begin")
+        print()
+        while choice == "":
+            if choice == "":
+                choice = num_list
+
+            # Shuffle the list
+            random.shuffle(choice)
+            # Ask question
+            for i in choice:
+                print()
+                print(".",f"Question {question}")
+                print()
+                answer = input("Please enter the english word for {}: ".format(i[0])).lower()
+                # If it is right show correct and add one to the score
+                if answer == i[1] or answer == i[2]:
+                    print("!","Correct")
                     print()
-                    print(".",f"Question {question}")
+                    score += 1
+
+
+                # If incorrect give feedback
+                else:
+                    print("*",'Incorrect')
+                    print(f"The answer was {i[1]}")
                     print()
-                    answer = input("Please enter the english word for {}: ".format(i[0])).lower()
-                    # If it is right show correct and add one to the score
-                    if answer == i[1] or answer == i[2]:
-                        print("!","Correct")
-                        print()
-                        score += 1
+                question += 1
 
+            play_again = input("\n Do you want to play again?\n "
+            "<enter> to play again or 'X' to exit").lower()
 
-                    # If incorrect give feedback
-                    else:
-                        print("*",'Incorrect')
-                        print(f"The answer was {i[1]}")
-                        print()
-                    question += 1
-     # Code to play again
-    play_again = input("\n Do you want to play again?\n "
-                        "<enter> to play again or 'X' to exit").lower()
+            if question > 10:
+                question = 1
 
 
 # Main Routine
