@@ -42,6 +42,7 @@ def instructions():
 
 # Function to generate questions, score and rounds
 def generate_question():
+
     # list of numbers
     num_list = [['Tahi', "1", "one"], ['Rua', "2", "two"], ['Toru', "3", "three"],
                 ['Whā', "4", "four"], ['Rima', "5", "five"], ["Ono", "6", "six"],
