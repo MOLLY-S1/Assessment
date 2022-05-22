@@ -101,6 +101,8 @@ def generate_question():
             play_again = input("\n Do you want to play again?\n "
                                "<enter> to play again or 'X' to exit").lower()
 
+            score = 0
+
         if question > 10:
             question = 1
 
@@ -119,7 +121,7 @@ print(formatter("-", " Welcome to the Māori Quiz! "))
 print()
 
 # Played before
-played_before = yes_no("have you done this quiz before? :")
+played_before = yes_no("Have you done this quiz before? :")
 if played_before == "No":
     instructions()
 
