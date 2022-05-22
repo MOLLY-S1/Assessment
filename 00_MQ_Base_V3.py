@@ -72,27 +72,34 @@ def generate_question():
             # Ask question
             for i in choice:
                 print()
-                print(formatter(".",f"Question {question}"))
+                print(formatter(".", f"Question {question}"))
                 print()
-                answer = input("Please enter the english word for {}: ".format(i[0])).lower()
+                answer = input("Enter the english word for {}: ".format(i[0])).lower()
                 # If it is right show correct and add one to the score
                 if answer == i[1] or answer == i[2]:
-                    print(formatter("!","Correct"))
+                    print(formatter("!", "Correct"))
                     print()
                     score += 1
 
-
                 # If incorrect give feedback
                 else:
-                    print(formatter("*",'Incorrect'))
+                    print(formatter("*", 'Incorrect'))
                     print(f"The answer was {i[1]}")
                     print()
                 question += 1
                 # show the score
-            print(formatter("/",f"Your score was {score} out of 10 questions"))
+            print(formatter("/", f"Your score was {score} out of 10 questions"))
+            if 4 >= score:
+                print("You should probably do some more studying!")
+            elif 4 < score <= 6:
+                print("Well done, you got half(ish) right!")
+            elif 6 < score <= 9:
+                print("WOW, you got more than half, that's a great score!")
+            else:
+                print("10/10 THAT'S AMAZING!!!")
 
             play_again = input("\n Do you want to play again?\n "
-                           "<enter> to play again or 'X' to exit").lower()
+                               "<enter> to play again or 'X' to exit").lower()
 
         if question > 10:
             question = 1
@@ -107,16 +114,19 @@ def formatter(symbol, text):
 
 
 # Main routine
-print(formatter("-"," Welcome to the Māori Quiz! "))
+# Welcome Screen
+print(formatter("-", " Welcome to the Māori Quiz! "))
 print()
 
+# Played before
 played_before = yes_no("have you done this quiz before? :")
 if played_before == "No":
     instructions()
 
+# Question Generator
 generate_question()
+
+# Farewell Screen
 print()
 print("Thankyou for playing")
 print(formatter("=", "Goodbye"))
-
-

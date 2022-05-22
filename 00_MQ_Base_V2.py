@@ -97,9 +97,6 @@ def generate_question():
                         "<enter> to play again or 'X' to exit").lower()
 
 
-
-
-
 def rounds():
     play_again = ""
 
@@ -108,6 +105,7 @@ def rounds():
 
         play_again =  input("\n Do you want to play again?\n "
                             "<enter> to play again or 'X' to exit").lower()
+
 
 # Function to format statements
 def formatter(symbol, text):
@@ -126,5 +124,3 @@ if played_before == "No":
     instructions()
 
 print(generate_question())
-
-
