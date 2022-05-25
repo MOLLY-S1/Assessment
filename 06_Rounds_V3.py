@@ -1,49 +1,6 @@
-""" Base Component V3
-Based off V2
-Functions added when they have been tested and completed
-"""
 
 import random
 
-
-# Yes/No checking function
-def yes_no(question_text):
-    while True:
-
-        # Ask the user if they have played before
-        answer = input(question_text).lower()
-
-        # If they say yes launch the game
-        if answer == "yes" or answer == "y":
-            answer = "Yes"
-            return answer
-
-        # If they say no show instructions
-        elif answer == "no" or answer == "n":
-            answer = "No"
-            return answer
-
-        # If anything else is entered show error message
-        else:
-            print("Please enter 'Yes' or 'No' ")
-            print()
-
-
-# Function to display instructions
-def instructions():
-    print("*** How To Play ***")
-    print()
-    print("There will be 10 questions to test you knowledge of Māori numbers\n"
-          "Each question can be answered as a integer or a word for that"
-          " number\n"
-          "At the end of the 10 questions you will be given your score out of"
-          " ten\n"
-          "You can then press <enter> to play again or 'x' to quit\n"
-          "Have fun and good luck! ")
-    print()
-
-
-# Function to generate questions, score and rounds
 def generate_question():
 
     # list of numbers
@@ -105,37 +62,9 @@ def generate_question():
                 print("10/10 THAT'S AMAZING!!!")
 
             play_again = input("\n Do you want to play again?\n "
-                               "press ANY BUTTON to play again or 'X' "
-                               "to exit").lower()
+                               "<enter> to play again or 'X' to exit").lower()
 
             score = 0
 
         if question > 10:
             question = 1
-
-
-# Function to format statements
-def formatter(symbol, text):
-    sides = symbol * 5
-    formatted_text = f"{sides} {text} {sides}"
-    top_bottom = symbol * len(formatted_text)
-    return f"{top_bottom}\n{formatted_text}\n{top_bottom}"
-
-
-# Main routine
-# Welcome Screen
-print(formatter("-", " Welcome to the Māori Quiz! "))
-print()
-
-# Played before
-played_before = yes_no("Have you done this quiz before? :")
-if played_before == "No":
-    instructions()
-
-# Question Generator
-generate_question()
-
-# Farewell Screen
-print()
-print("Thankyou for playing")
-print(formatter("=", "Goodbye"))
