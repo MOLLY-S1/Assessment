@@ -95,6 +95,8 @@ def generate_question():
                 # show the score
             print(formatter
                   ("/", f"Your score was {score} out of 10 questions"))
+
+            # Give user feedback on score
             if 4 >= score:
                 print("You should probably do some more studying!")
             elif 4 < score <= 6:
@@ -104,12 +106,14 @@ def generate_question():
             else:
                 print("10/10 THAT'S AMAZING!!!")
 
+            # Play again
             play_again = input("\n Do you want to play again?\n "
                                "press ANY BUTTON to play again or 'X' "
                                "to exit").lower()
-
+            # Reset score to zero
             score = 0
 
+        # Reset question number to zero
         if question > 10:
             question = 1
 
