@@ -21,4 +21,4 @@ def num_check(question, low, high):
 
 
 # Main Routine
-aim = num_check("What score do you aim to get on this quiz? :", 1, 10)
+aim = num_check("What score do you aim to get out of ten on this quiz? :", 1, 10)
